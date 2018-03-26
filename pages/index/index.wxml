@@ -1,0 +1,24 @@
+<view class='container'>
+  <view class='main'>
+    <checkbox-group bindchange="checked">
+      <view class='content_wrapper' wx:for='{{list}}'>
+        <checkbox class='check' value='{{index}}' checked='{{item.complete}}'
+        disabled='{{item.disable}}'></checkbox>
+        <input type='text' class='content {{item.complete}}' adjust-position='true'
+        bindinput='inputed' value='{{item.content}}' disabled='{{item.complete}}'
+        placeholder='What are you want to do today？' id='{{index}}'          
+        placeholder-class='tips'></input>
+      </view>
+    </checkbox-group>
+    <view class='ctrl'>
+      <view class='btn_wrapper'>
+        <button class='btn act' bindtap='actived' id='0'>all</button>
+        <button class='btn' bindtap='actived' id='1'>complete</button>
+        <button class='btn' bindtap='actived' id='2'>active</button>
+      </view>
+      <view class='clear_wrapper'>
+        <button class='clear' bindtap='clear'>clearAll</button>
+      </view>
+    </view>
+  </view>
+</view>
